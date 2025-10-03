@@ -1,0 +1,344 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Mobile page styles */
+.marquee-container {
+  overflow-x: hidden !important;
+  display: flex !important;
+  flex-direction: row !important;
+  position: relative;
+  width: var(--width);
+  transform: var(--transform);
+}
+
+.marquee-container:hover div {
+  animation-play-state: var(--pause-on-hover);
+}
+
+.marquee-container:active div {
+  animation-play-state: var(--pause-on-click);
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay::before,
+.overlay::after {
+  background: linear-gradient(to right, var(--gradient-color));
+  content: "";
+  height: 100%;
+  position: absolute;
+  width: var(--gradient-width);
+  z-index: 2;
+}
+
+.overlay::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+
+.overlay::before {
+  left: 0;
+  top: 0;
+}
+
+.marquee {
+  flex: 0 0 auto;
+  min-width: var(--min-width);
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  animation: scroll var(--duration) linear var(--delay) var(--iteration-count);
+  animation-play-state: var(--play);
+  animation-delay: var(--delay);
+  animation-direction: var(--direction);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.initial-child-container {
+  flex: 0 0 auto;
+  display: flex;
+  min-width: auto;
+  flex-direction: row;
+}
+
+.child {
+  transform: var(--transform);
+}
+
+.cursor {
+  /* Add cursor styles here if needed */
+}
+
+.mainContent {
+  /* Add mainContent styles here if needed */
+}
+
+.garden {
+  /* Add garden styles here if needed */
+}
+
+.mob {
+  /* Add mob styles here if needed */
+}
+
+.deskz {
+  /* Add deskz styles here if needed */
+}
+
+.backallm {
+  /* Add backallm styles here if needed */
+}
+
+.centerall {
+  text-align: center;
+}
+
+.centeritall {
+  display: flex;
+  justify-content: center;
+}
+
+.centeritallnined {
+  max-width: 100%;
+  height: auto;
+}
+
+.opacity-bg {
+  opacity: 0.9;
+}
+
+.anos_text {
+  font-family: 'Press Start 2P', cursive;
+  color: #FFCC00;
+  text-shadow: 3px 3px 0 #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.anos_textg {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.anos_textgb {
+  font-family: 'Luckiest Guy', cursive;
+  color: #FFCC00;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.backof1 {
+  background-color: #111111;
+  padding: 20px 0;
+}
+
+.backof2 {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+}
+
+.centeritallninecm {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.centeritallninec {
+  max-width: 100%;
+  height: auto;
+  margin-top: -50px;
+  z-index: 1;
+  position: relative;
+}
+
+.backofhow {
+  background-color: #111111;
+  padding: 40px 0;
+}
+
+.addbghow {
+  background-color: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.htb_h {
+  color: #FFCC00;
+  text-align: center;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.htb_hp {
+  color: white;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.backoffooter {
+  background-color: #1a1a1a;
+  padding: 20px 0;
+}
+
+.footer {
+  background-color: #111111;
+  padding: 10px 0;
+}
+
+.backofit {
+  background-color: #000;
+}
+
+.fotx {
+  color: #FFCC00;
+  font-family: 'Luckiest Guy', cursive;
+  font-size: 1.2rem;
+  text-align: center;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.buy-btn {
+  background-color: #FFCC00;
+  color: #000;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Luckiest Guy', cursive;
+  text-transform: uppercase;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.buy-btn:hover {
+  background-color: #FFD700;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.socmob {
+  transition: transform 0.3s ease;
+}
+
+.socmob:hover {
+  transform: scale(1.2);
+}
+
+.MuiGrid-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.MuiGrid-item {
+  flex: 1;
+}
+
+.MuiGrid-grid-xs-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: 600px) {
+  .MuiGrid-grid-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .MuiGrid-grid-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .MuiGrid-grid-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 960px) {
+  .MuiGrid-grid-lg-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .MuiGrid-grid-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+  
+  .MuiGrid-grid-lg-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.css-1d3bbye {
+  width: 100%;
+}
+
+.css-15j76c0 {
+  width: 100%;
+}
+
+.css-iol86l {
+  width: 100%;
+}
+
+.css-1wxaqej {
+  width: 100%;
+}
+
+.css-op399x {
+  width: 100%;
+}
+
+.css-1ha4th6 {
+  width: 100%;
+}
+
+.css-isbt42 {
+  width: 100%;
+}
